@@ -3,7 +3,7 @@ import { Layout } from 'antd';
 import { connect } from 'dva';
 import Header from '../../components/Header/Header';
 import SystemInfo from '../../components/SystemInfo/SystemInfo';
-import styles from './HomePage.css';
+import styles from './index.less';
 
 class HomePage extends React.Component {
   render() {

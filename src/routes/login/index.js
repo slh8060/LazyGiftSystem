@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
-import styles from './Login.less';
+import styles from './index.less';
 
 function Login() {
   return (
