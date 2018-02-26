@@ -7,7 +7,6 @@ const FormItem = Form.Item;
 
 const Login = ({
   dispatch,
-  loading,
   form: {
     getFieldDecorator,
     validateFieldsAndScroll,
@@ -18,8 +17,7 @@ const Login = ({
       if (errors) {
         return;
       }
-      console.log('val:', values);
-      dispatch({ type: 'login/login', payload: values });
+      dispatch({ type: 'login/doLogin', payload: values });
     });
   }
   return (
@@ -50,7 +48,7 @@ const Login = ({
           )}
         </FormItem>
         <Row>
-          <Button type="primary" size="large" style={{ width: '100%' }} onClick={handleOk} loading={loading.effects.login}>
+          <Button type="primary" size="large" style={{ width: '100%' }} onClick={handleOk} >
             Sign in
           </Button>
           <p className={styles.loginTip}>
