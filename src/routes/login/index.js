@@ -7,6 +7,7 @@ const FormItem = Form.Item;
 
 const Login = ({
   dispatch,
+  loading,
   form: {
     getFieldDecorator,
     validateFieldsAndScroll,
@@ -35,7 +36,7 @@ const Login = ({
               message: 'Please input your username!',
             }],
           })(
-            <Input prefix={<Icon type="user" />} onPressEnter={handleOk} placeholder="Username" />
+            <Input prefix={<Icon type="user" />} onPressEnter={handleOk} placeholder="Username" />,
           )}
         </FormItem>
         <FormItem>
@@ -45,11 +46,11 @@ const Login = ({
               message: 'Please input your Password!',
             }],
           })(
-            <Input prefix={<Icon type="lock" />} type="password" onPressEnter={handleOk} placeholder="Password" />
+            <Input prefix={<Icon type="lock" />} type="password" onPressEnter={handleOk} placeholder="Password" />,
           )}
         </FormItem>
         <Row>
-          <Button type="primary" size="large"  style={{ width: '100%' }} onClick={handleOk}>
+          <Button type="primary" size="large" style={{ width: '100%' }} onClick={handleOk} loading={loading.effects.login}>
             Sign in
           </Button>
           <p className={styles.loginTip}>
@@ -60,7 +61,9 @@ const Login = ({
       </Form>
     </div>
   );
-}
+};
+Login.propTypes = {
+};
 
-export default connect()(Form.create()(Login));
+export default connect(({ loading }) => ({ loading }))(Form.create()(Login));
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Layout, Menu, Icon } from 'antd';
 import style from './Header.less';
 
@@ -31,24 +32,31 @@ class Header extends React.Component {
           mode="inline"
         >
           <Menu.Item key="1">
-            <Icon type="pie-chart" />
-            <span>Option 1</span>
+            <Link to="/dashboard">
+              <Icon type="pie-chart" />
+              <span>Dashboard</span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="2">
-            <Icon type="desktop" />
-            <span>Option 2</span>
+            <Link to="/user">
+              <Icon type="desktop" />
+              <span>Users</span>
+            </Link>
           </Menu.Item>
           <SubMenu key="sub1"
                    title={
                      <span>
                        <Icon type="user" />
-                       <span>User</span>
+                       <span>Harts</span>
                      </span>
                    }
           >
-            <Menu.Item key="3">Tom</Menu.Item>
-            <Menu.Item key="4">Bill</Menu.Item>
+            <Menu.Item key="3">Echarts</Menu.Item>
+            <Menu.Item key="4">HighCharts</Menu.Item>
             <Menu.Item key="5">Alex</Menu.Item>
+            <Menu.Item key="33">Tom1</Menu.Item>
+            <Menu.Item key="44">Bill1</Menu.Item>
+            <Menu.Item key="55">Alex1</Menu.Item>
           </SubMenu>
           <SubMenu key="sub2"
                    title={
@@ -67,8 +75,9 @@ class Header extends React.Component {
           </Menu.Item>
         </Menu>
       </Sider>
-    )
+    );
   }
 }
-
+Header.propTypes = {
+};
 export default Header;

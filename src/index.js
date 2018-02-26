@@ -1,10 +1,18 @@
 import dva from 'dva';
+import createLoading from 'dva-loading';
+import createHistory from 'history/createBrowserHistory';
+
 import './index.less';
 
 // 1. Initialize
-const app = dva();
+const app = dva({
+  ...createLoading({
+    effects: true,
+  }),
+  history: createHistory(),
+});
 
-app.model(require('./models/login'));
+app.model(require('./models/app'));
 
 // 2. Plugins
 // app.use({});
