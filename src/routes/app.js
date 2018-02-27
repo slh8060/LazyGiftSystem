@@ -7,7 +7,7 @@ import Container from '../components/Container/Container';
 
 const App = ({ children, location }) => {
   const { pathname } = location;
-  if (pathname === '/login' || pathname === '/logout') {
+  if (pathname === '/login') {
     return (
       <div>
         {children}

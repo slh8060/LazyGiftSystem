@@ -2,5 +2,12 @@ import request from '../utils/request';
 
 export async function login(data) {
   const { username, password } = data;
-  return request('/api/login.json', `username=${username}&userpwd=${password}`);
+
+  return request('/api/login.json', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+    },
+    body: `username=${username}&userpwd=${password}`,
+  });
 }

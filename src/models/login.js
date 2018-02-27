@@ -44,7 +44,6 @@ export default {
       }
     },
     * query({ payload }, { put }) {
-      console.log('isLogin', payload.isLogin);
       yield put(routerRedux.push({
         pathname: '/login',
       }));

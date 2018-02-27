@@ -8,7 +8,6 @@ const { Header } = Layout;
 const SystemInfo = ({ login, dispatch }) => {
   const { user, isLogin } = login;
   const loginClick = () => {
-    console.log('loginClick');
     dispatch({
       type: 'login/query',
       payload: {

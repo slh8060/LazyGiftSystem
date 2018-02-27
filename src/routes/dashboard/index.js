@@ -16,5 +16,11 @@ function Dashboard() {
   );
 }
 
-export default connect()(Dashboard);
+function mapStateToProps({ dashboard }) {
+  return {
+    dashboard,
+  };
+}
+
+export default connect(mapStateToProps)(Dashboard);
 
