@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import { Breadcrumb, Table, Divider } from 'antd';
+import styles from './index.less';
 
 function User({ userList }) {
   const dataSource = userList.data;
@@ -15,6 +16,13 @@ function User({ userList }) {
       dataIndex: 'name',
       key: 'name',
     }, {
+      title: 'Image',
+      dataIndex: 'avatar',
+      key: 'avatar',
+      width: 64,
+      className: styles.avatar,
+      render: text => <img alt={'avatar'} width={24} src={text} />,
+    }, {
       title: 'Mobile',
       dataIndex: 'mobile',
       key: 'mobile',
@@ -23,9 +31,9 @@ function User({ userList }) {
       dataIndex: 'email',
       key: 'email',
     }, {
-      isadmin: 'isAdmin',
-      dataIndex: 'isadmin',
-      key: 'isadmin',
+      title: 'CreateTime',
+      dataIndex: 'created_at',
+      key: 'created_at',
     }, {
       title: 'Operate',
       key: 'operate',
